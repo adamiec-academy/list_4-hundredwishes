@@ -4,8 +4,11 @@ def my_split(text):
     word = ""
     for i in range(len(text)):
         if text[i] == " ":
-            list.append(word)
-            word = ""
+            if text[i-1] != " ":
+                list.append(word)
+                word = ""
+            else:
+                pass
         elif (i+1) == len(text):
             word = word + text[i]
             list.append(word)
